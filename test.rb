@@ -2,18 +2,18 @@ require 'nokogiri'
 require 'open-uri'
 require 'pry'
 
+title = ''
+link = ''
 
 doc = Nokogiri::HTML(open('http://www.huffingtonpost.com'))
-title = []
-link = []
-data = doc.css("div#splash_block")
+data = doc.css("h5")
 data.each do |a|
-	title << a.content
+	title = a.content.strip
+	a.children.each do |x|
+		x.each do |test|
+			link = test.last
+		end
+	end
 end
 
-doc1 = Nokogiri::HTML(open('http://www.huffingtonpost.com'))
-data1 = doc.css("h5")
-data1.each do |a|
-	link << a.content
-end
-    
+

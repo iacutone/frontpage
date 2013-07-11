@@ -1,3 +1,3 @@
 class Article < ActiveRecord::Base
-  # attr_accessible :title, :body
+  attr_accessible :huff_title, :huff_link
 end
