@@ -1,31 +1,43 @@
 require 'nokogiri'
 require 'open-uri'
 
-task :huff_front_page => :environment do
+task :page_scrape => :environment do
 
-  title = ''
-  link = ''
+  huff_title = ''
+  huff_link = ''
+  nytimes_title = ''
+  nytimes_link = ''
+
 
   doc = Nokogiri::HTML(open('http://www.huffingtonpost.com'))
   data = doc.css("h5")
   data.each do |a|
-    title = a.content.strip
+    huff_title = a.content.strip
     a.children.each do |x|
       x.each do |test|
-        link = test.last
-        @article = Article.new(
-          :huff_link => title,
-          :huff_title => link
-          )
-
-        @article.save
+        huff_link = test.last
       end
     end
   end
 
-  # article.each do |column|
-  #   column.huff_link = link
-  #   column.huff_title = title
-  # end
+  doc = Nokogiri::HTML(open('http://www.newyorktimes.com'))
+  data = doc.xpath("//*[@id='photoSpotRegion']/div/div/h3/a")
+  data.each do |a|
+    nytimes_link = data[0].attr('href')
+    a.children.each do |x|
+      nytimes_title = x.content.strip
+    end
+  end
+
+  @article = Article.new(
+  :huff_link => huff_link,
+  :huff_title => huff_title,
+  :nytimes_link => nytimes_link,
+  :nytimes_title => nytimes_title
+  )
+
+  @article.save
 end
+
+
 

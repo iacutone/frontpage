@@ -11,13 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130711013526) do
+ActiveRecord::Schema.define(:version => 20130711193425) do
 
   create_table "articles", :force => true do |t|
-    t.string   "huff_title"
-    t.string   "huff_link"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.text     "huff_title"
+    t.text     "huff_link"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+    t.text     "nytimes_link"
+    t.text     "nytimes_title"
   end
 
 end

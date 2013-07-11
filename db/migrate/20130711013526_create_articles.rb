@@ -2,8 +2,8 @@ class CreateArticles < ActiveRecord::Migration
   def change
     create_table :articles do |t|
     	
-    	t.string :huff_title
-    	t.string :huff_link
+			t.text :huff_title
+			t.text :huff_link
 
       t.timestamps
     end
