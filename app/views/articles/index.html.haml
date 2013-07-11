@@ -1,2 +1,7 @@
-%h1 hello
-= @article.huff_title
+%h1 Front Page
+.span6
+	= image_tag "huff.jpeg", size: '50x50'
+	= link_to @article.huff_title, @article.huff_link 
+	%br/
+	= image_tag "times.jpeg", size: '50x50'
+	= link_to @article.nytimes_title, @article.nytimes_link
