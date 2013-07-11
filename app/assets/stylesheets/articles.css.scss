@@ -1,5 +1,11 @@
 @import "bootstrap";
 
+.row-fluid {
+	border: solid;
+	border-color: rgba(231, 255, 229, .5);
+	padding: 10px;
+}
+
 .clear {
   clear: both;
 }
