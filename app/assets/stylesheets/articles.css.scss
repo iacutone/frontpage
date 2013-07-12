@@ -1,5 +1,13 @@
 @import "bootstrap";
 
+html {
+	background-image: url('background.jpg');
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: top center;
+}
+
+
 .row-fluid {
 	border: solid;
 	border-color: rgba(12, 4, 84, .7);
@@ -14,12 +22,17 @@ h2 {
 }
 
 .left {
-	border-radius: 25px;
 	font-family: 'Open Sans Condensed', sans-serif;
 }
 
-.left:hover {
+.huff:hover {
 	background-color: #2316FF;
+	border-radius: 50px;
+}
+
+.times:hover {
+	background-color: #2316FF;
+	border-radius: 50px;
 }
 
 .right {
@@ -27,12 +40,13 @@ h2 {
 	font-family: 'Open Sans Condensed', sans-serif;
 }
 
-.right:hover {
+.fox:hover {
 	background-color: #FF1C00;
+	border-radius: 50px;
 }
 
 a {
-	padding-left: 10px;
+	padding-left: 15px;
 }
 
 a:hover {
@@ -41,6 +55,9 @@ a:hover {
 
 a:link {
 	color: #030038;
-	text-decoration: none;
 }  
+
+img {
+	padding-top: 10px;
+}
 
