@@ -7,6 +7,8 @@ task :page_scrape => :environment do
   huff_link = ''
   nytimes_title = ''
   nytimes_link = ''
+  fox_title = ''
+  fox_link = ''
 
 
   doc = Nokogiri::HTML(open('http://www.huffingtonpost.com'))
@@ -29,11 +31,20 @@ task :page_scrape => :environment do
     end
   end
 
+  doc = Nokogiri::HTML(open('http://www.foxnews.com'))
+  data = doc.xpath("//*[@id='section']/div[2]/div/div[1]/h1/a")
+  data.each do |a|
+    fox_title = a.content.strip
+    fox_link = a.attr('href')
+  end
+
   @article = Article.new(
   :huff_link => huff_link,
   :huff_title => huff_title,
   :nytimes_link => nytimes_link,
-  :nytimes_title => nytimes_title
+  :nytimes_title => nytimes_title,
+  :fox_link => fox_link,
+  :fox_title => fox_title
   )
 
   @article.save
