@@ -9,6 +9,8 @@ task :page_scrape => :environment do
   nytimes_link = ''
   fox_title = ''
   fox_link = ''
+  wsjournal_title = ''
+  wsjournal_link = ''
 
 
   doc = Nokogiri::HTML(open('http://www.huffingtonpost.com'))
@@ -16,18 +18,9 @@ task :page_scrape => :environment do
   data.each do |a|
     huff_title = a.content.strip
     a.children.each do |x|
-      x.each do |test|
-        huff_link = test.last
+      x.each do |link|
+        huff_link = link.last
       end
-    end
-  end
-
-  doc = Nokogiri::HTML(open('http://www.newyorktimes.com'))
-  data = doc.xpath("//*[@id='photoSpotRegion']/div/div/h3/a")
-  data.each do |a|
-    nytimes_link = data[0].attr('href')
-    a.children.each do |x|
-      nytimes_title = x.content.strip
     end
   end
 
@@ -38,6 +31,21 @@ task :page_scrape => :environment do
     fox_link = a.attr('href')
   end
 
+  doc = Nokogiri::HTML(open('http://www.newyorktimes.com'))
+  data = doc.css(".story>h2>a")
+  data.each do |a|
+    nytimes_title = a.content.strip
+    nytimes_link = a.attr('href')
+  end
+
+  # doc = Nokogiri::HTML(open('http://online.wsj.com/home-page'))
+  # data = doc.css(".tipTarget>a")
+  # data.each do |a|
+  #   binding.pry
+  #   wsjournal_title = a.content.strip
+  #   wsjournal_link = a.attr('href')
+  # end
+
   @article = Article.new(
   :huff_link => huff_link,
   :huff_title => huff_title,
@@ -45,6 +53,8 @@ task :page_scrape => :environment do
   :nytimes_title => nytimes_title,
   :fox_link => fox_link,
   :fox_title => fox_title
+  # :wsjournal_link => wsjournal_link,
+  # :wsjournal_title => wsjournal_title
   )
 
   @article.save

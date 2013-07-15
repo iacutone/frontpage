@@ -16,5 +16,6 @@
 #
 
 class Article < ActiveRecord::Base
-  attr_accessible :huff_title, :huff_link, :nytimes_title, :nytimes_link, :fox_link, :fox_title
+  attr_accessible :huff_title, :huff_link, :nytimes_title, :nytimes_link, :fox_link, :fox_title,
+  	:wsjournal_link, :wsjournal_title
 end
