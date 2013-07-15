@@ -1,13 +1,10 @@
 @import "bootstrap";
 
-html {
+body {
 	background-image: url('background.jpg');
 	background-repeat: no-repeat;
-	background-attachment: fixed;
-	background-position: top center;
+	background-position: center top;
 }
-
-
 .row-fluid {
 	border: solid;
 	border-color: rgba(12, 4, 84, .7);
@@ -58,5 +55,9 @@ a:link {
 a:link:hover {
 	color: white;
 } 
+
+footer {
+	padding: 20px;
+}
 
 
