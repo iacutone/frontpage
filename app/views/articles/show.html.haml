@@ -5,13 +5,13 @@
 			.left
 				.huff
 					= image_tag "huff.jpeg", size: '50x50'
-					= link_to @article.huff_title, @article.huff_link
+					= link_to truncate(@article.huff_title, length: 75, separator: ' '), @article.huff_link
 					%br  
 				.times
 					= image_tag "times.jpeg", size: '50x50'
-					= link_to @article.nytimes_title, @article.nytimes_link
+					= link_to truncate(@article.nytimes_title, length: 75, separator: ' '), @article.nytimes_link
 		.span6
 			.right
 				.fox
 					= image_tag "fox.jpg", size: '50x50'
-					= link_to @article.fox_title, @article.fox_link
+					= link_to truncate(@article.fox_title, length: 75, separator: ' '), @article.fox_link
