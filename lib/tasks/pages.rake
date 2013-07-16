@@ -11,6 +11,9 @@ task :page_scrape => :environment do
   fox_link = ''
   wsjournal_title = ''
   wsjournal_link = ''
+  nypost_title = ''
+  nypost_link = ''
+
 
 
   doc = Nokogiri::HTML(open('http://www.huffingtonpost.com'))
@@ -38,6 +41,20 @@ task :page_scrape => :environment do
     nytimes_link = a.attr('href')
   end
 
+  doc = Nokogiri::HTML(open('http://www.nypost.com/'))
+  data = doc.css("#top-story-item-1>img")
+  data.each do |a|
+    array = a.first
+    nypost_title = array[1]
+  end
+
+  doc = Nokogiri::HTML(open('http://www.nypost.com/'))
+  data = doc.css("#top-story-item-1>h2>a")
+  data.each do |a|
+    array = a.first
+    nypost_link = array[1]
+  end
+
   # doc = Nokogiri::HTML(open('http://online.wsj.com/home-page'))
   # data = doc.css(".tipTarget>a")
   # data.each do |a|
@@ -52,9 +69,9 @@ task :page_scrape => :environment do
   :nytimes_link => nytimes_link,
   :nytimes_title => nytimes_title,
   :fox_link => fox_link,
-  :fox_title => fox_title
-  # :wsjournal_link => wsjournal_link,
-  # :wsjournal_title => wsjournal_title
+  :fox_title => fox_title,
+  :nypost_link => nypost_link,
+  :nypost_title => nypost_title
   )
 
   @article.save

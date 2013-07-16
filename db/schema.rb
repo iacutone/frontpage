@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130712031251) do
+ActiveRecord::Schema.define(:version => 20130716042544) do
 
   create_table "articles", :force => true do |t|
     t.text     "huff_title"
@@ -24,6 +24,8 @@ ActiveRecord::Schema.define(:version => 20130712031251) do
     t.text     "fox_title"
     t.text     "wsjournal_link"
     t.text     "wsjournal_title"
+    t.text     "nypost_link"
+    t.text     "nypost_title"
   end
 
 end

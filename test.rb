@@ -5,24 +5,30 @@ require 'pry'
 # wsjournal_title = ''
 # wsjournal_link = ''
 
-  doc = Nokogiri::HTML(open('http://online.wsj.com/home-page'))
-  data = doc.xpath("//*[@id='module_2_4_wide_right']/ul/li/h2/a")
-  data.each do |a|
-  	binding.pry
-    wsjournal_title = a.content.strip
-    wsjournal_link = a.attr('href')
-  end
-nytimes_link = ''
-nytimes_title = ''
+  # doc = Nokogiri::HTML(open('http://online.wsj.com/home-page'))
+  # data = doc.xpath("//*[@id='module_2_4_wide_right']/ul/li/h2/a")
+  # data.each do |a|
+  # 	binding.pry
+  #   wsjournal_title = a.content.strip
+  #   wsjournal_link = a.attr('href')
+  # end
+nypost_link = ''
+nypost_title = ''
 
- doc = Nokogiri::HTML(open('http://www.newyorktimes.com'))
-  data = doc.xpath("//*[@id='photoSpotRegion']/div/div/h3/a")
+ doc = Nokogiri::HTML(open('http://www.nypost.com/'))
+  data = doc.css("#top-story-item-1>img")
   data.each do |a|
-    nytimes_link = data[0].attr('href')
-    a.children.each do |x|
-    	binding.pry
-      nytimes_title = x.content.strip
-    end
+    array = a.first
+    nypost_link = array[1]
   end
+
+  doc = Nokogiri::HTML(open('http://www.nypost.com/'))
+  data = doc.css("#top-story-item-1>h2>a")
+  data.each do |a|
+    array = a.first
+    nypost_title = array[1]
+  end
+
+  
 
 
