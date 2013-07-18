@@ -13,6 +13,8 @@
 #  fox_title       :text
 #  wsjournal_link  :text
 #  wsjournal_title :text
+#  nypost_link     :text
+#  nypost_title    :text
 #
 
 require 'test_helper'

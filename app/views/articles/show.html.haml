@@ -17,3 +17,5 @@
 				.nyp
 					= image_tag "nypost.jpg", size: '50x50'
 					= link_to truncate(@article.nypost_title, length: 75, separator: ' '), "http://www.nypost.com/" + @article.nypost_link
+
+	= link_to "All Articles", articles_path
