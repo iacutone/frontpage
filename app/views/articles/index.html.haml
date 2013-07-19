@@ -1,2 +1,28 @@
 %h2 All Articles
+.row-fluid
+	.span12
+		%table#showTable
+			%thead
+				%tr
+					%th Date
+					%th Publication
+					%th Title
+			%tbody
+				- @articles.each do |article|
+					%tr.times
+						%td.span4= article.created_at.strftime("%d %b %Y")
+						%td.span4= "New York Times"
+						%td.span4= link_to truncate(article.nytimes_title, length: 75, separator: ' '), article.nytimes_link 
+					%tr.huff
+						%td.span4= article.created_at.strftime("%d %b %Y")
+						%td.span4= "Huffington Post"
+						%td.span4= link_to truncate(article.huff_title, length: 75, separator: ' '), article.huff_link
+					%tr.nyp
+						%td.span4= article.created_at.strftime("%d %b %Y")
+						%td.span4= "NY Post"
+						%td.span4= link_to truncate(article.nypost_title, length: 75, separator: ' '), "http://www.nypost.com/" + article.nypost_link
+					%tr.fox
+						%td.span4= article.created_at.strftime("%d %b %Y")
+						%td.span4= "Fox News"
+						%td.span4= link_to truncate(article.fox_title, length: 75, separator: ' '), article.fox_link
 
