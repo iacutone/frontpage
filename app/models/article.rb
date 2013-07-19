@@ -21,5 +21,4 @@ class Article < ActiveRecord::Base
   attr_accessible :huff_title, :huff_link, :nytimes_title, :nytimes_link, :fox_link, :fox_title,
   	:nypost_link, :nypost_title
 
-  	validates_uniqueness_of :huff_title, :nytimes_title, :fox_title, :nypost_title
 end
