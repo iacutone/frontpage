@@ -1,0 +1,25 @@
+---
+background.jpg: background-01f3eb9429628ed8602e168ad25bf5f2.jpg
+background/index.jpg: background-01f3eb9429628ed8602e168ad25bf5f2.jpg
+fox.jpg: fox-94bf3c18b5b1d3aefa294e8f692875f0.jpg
+fox/index.jpg: fox-94bf3c18b5b1d3aefa294e8f692875f0.jpg
+huff.jpeg: huff-5e60ce6613547ef859f915f537f95c60.jpeg
+huff/index.jpeg: huff-5e60ce6613547ef859f915f537f95c60.jpeg
+nypost.jpg: nypost-8c1b64a4dd319ebed1272c90cbcf70b3.jpg
+nypost/index.jpg: nypost-8c1b64a4dd319ebed1272c90cbcf70b3.jpg
+rails.png: rails-a3386665c05a2d82f711a4aaa72d247c.png
+rails/index.png: rails-a3386665c05a2d82f711a4aaa72d247c.png
+times.jpeg: times-e8fc3b61d87d0a8973cfb798280126ce.jpeg
+times/index.jpeg: times-e8fc3b61d87d0a8973cfb798280126ce.jpeg
+wsj.jpg: wsj-f7eefb3cac42462d97a2bf4821f7d2f6.jpg
+wsj/index.jpg: wsj-f7eefb3cac42462d97a2bf4821f7d2f6.jpg
+application.js: application-a986f2c56ec07acd3f3075d7a13d23d5.js
+application/index.js: application-a986f2c56ec07acd3f3075d7a13d23d5.js
+application.css: application-3975579e738c9090d4161bc7eb83091e.css
+application/index.css: application-3975579e738c9090d4161bc7eb83091e.css
+jquery.min.map: jquery.min-1c0cf7b6a3425fbd9a3bfccab0a99a4e.map
+jquery/index.min.map: jquery.min-1c0cf7b6a3425fbd9a3bfccab0a99a4e.map
+glyphicons-halflings-white.png: glyphicons-halflings-white-6cccd17a7aed91dbc0157d343c68c0d9.png
+glyphicons-halflings-white/index.png: glyphicons-halflings-white-6cccd17a7aed91dbc0157d343c68c0d9.png
+glyphicons-halflings.png: glyphicons-halflings-2851b489e8c39f8fad44fc10efb99c3e.png
+glyphicons-halflings/index.png: glyphicons-halflings-2851b489e8c39f8fad44fc10efb99c3e.png
