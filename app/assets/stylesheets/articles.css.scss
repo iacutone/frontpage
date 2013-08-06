@@ -3,7 +3,8 @@
 body {
 	background-image: url('background.jpg');
 	background-repeat: no-repeat;
-	background-position: center top;
+	background-position: center;
+	background-attachment: fixed;
 }
 .row-fluid {
 	border: solid;
