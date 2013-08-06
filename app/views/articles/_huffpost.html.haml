@@ -1,0 +1,4 @@
+%h6 Huffington Post
+- @huffpost_uniq.each do |article|
+	= link_to truncate(article['huff_title'], length: 75, separator: ' '), article['huff_link']
+	%br

@@ -1,0 +1,4 @@
+%h6 Fox News
+- @foxnews_uniq.each do |article|
+	= link_to truncate(article['fox_title'], length: 75, separator: ' '), article['fox_link']
+	%br

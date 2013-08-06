@@ -1,0 +1,4 @@
+%h6 NY Times
+- @nytimes_uniq.each do |article|
+	= link_to truncate(article['nytimes_title'], length: 75, separator: ' '), article['nytimes_link']
+	%br
